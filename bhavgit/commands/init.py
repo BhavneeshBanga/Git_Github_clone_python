@@ -1,6 +1,8 @@
 import click
 from pathlib import Path
 import json
+import os
+
 
 @click.command()
 def init():
@@ -22,5 +24,6 @@ def init():
     with open(bhav_dir / "config.json", "w") as f:
         json.dump(config, f, indent=4)
 
-    click.echo("Hello Bhavneesh 🚀")
-    click.echo("Bhav Repository Initialized")
+   
+    cwd = os.getcwd()
+    click.secho(f"bhav Repository Initialized in {cwd} " , fg="green")

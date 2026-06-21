@@ -1,1 +1,4 @@
 core
+.gitignore
+__pycache__
+.git

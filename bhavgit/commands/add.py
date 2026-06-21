@@ -31,7 +31,7 @@ def should_ignore(filepath):
     patterns = load_ignore_patterns()
     patterns.append(".bhav")
     
-    print(patterns)
+    # print(patterns)
     for part in filepath.parts:
 
         if part in patterns:
