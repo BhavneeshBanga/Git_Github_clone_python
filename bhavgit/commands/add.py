@@ -2,8 +2,49 @@ import click
 from pathlib import Path
 import shutil
 
+
+def load_ignore_patterns():
+
+    ignore_file = Path(".bhavignore")
+
+    if not ignore_file.exists():
+        return []
+
+    patterns = []
+
+    with open(ignore_file, "r") as f:
+
+        for line in f:
+
+            line = line.strip()
+
+            if not line:
+                continue
+
+            patterns.append(line)
+
+    return patterns
+
+
+def should_ignore(filepath):
+
+    patterns = load_ignore_patterns()
+    patterns.append(".bhav")
+    
+    print(patterns)
+    for part in filepath.parts:
+
+        if part in patterns:
+            return True
+
+    return False
+
+
 def add_file(filepath):
     source = Path(filepath)
+
+    if(should_ignore(source)):
+        return 
 
     if(not source.exists()):
         print("file doesn't exist")
