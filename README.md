@@ -134,6 +134,6 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ## 👤 Author
 
-**Your Name** — [@your-github-handle](https://github.com/your-github-handle)
+**Your Name** — [@BhavneeshBanga](https://github.com/BhavneeshBanga)
 
 Built as a learning project to understand the internals of Git.
